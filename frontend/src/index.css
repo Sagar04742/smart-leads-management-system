@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #FAFAF7;
+    color: #0D0D0D;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d4d4aa; border-radius: 99px; }
+
+  /* Selection */
+  ::selection { background: #fef08a; color: #0D0D0D; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ink text-cream font-medium px-4 py-2 rounded-lg text-sm transition-all
+           hover:bg-neutral-800 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed
+           flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-ink font-medium px-4 py-2 rounded-lg text-sm border border-neutral-200
+           transition-all hover:bg-neutral-50 active:scale-95 flex items-center gap-2;
+  }
+
+  .btn-danger {
+    @apply bg-red-50 text-red-600 font-medium px-4 py-2 rounded-lg text-sm border border-red-100
+           transition-all hover:bg-red-100 active:scale-95 flex items-center gap-2;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-neutral-200 rounded-lg px-3 py-2.5 text-sm text-ink
+           placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40
+           focus:border-amber-400 transition-all;
+  }
+
+  .input-error {
+    @apply border-red-300 focus:ring-red-300/40 focus:border-red-400;
+  }
+
+  .card {
+    @apply bg-white border border-neutral-100 rounded-xl shadow-sm;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full;
+  }
+}
